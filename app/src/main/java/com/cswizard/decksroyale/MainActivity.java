@@ -113,7 +113,7 @@ public class MainActivity extends AppCompatActivity
 
     public void makeApiRequest()
     {
-        String url ="https://clashapi.xyz/api/arenas";
+        String url ="http://www.clashapi.xyz/api/cards";
 
         JsonArrayRequest req = new JsonArrayRequest(url, new Response.Listener<JSONArray>()
         {
