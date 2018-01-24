@@ -11,13 +11,13 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class DeckBuilderActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener
+public class TunerActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener
 {
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_deck_builder);
+        setContentView(R.layout.activity_tuner);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -43,14 +43,12 @@ public class DeckBuilderActivity extends AppCompatActivity implements Navigation
         }
         else if (id == R.id.nav_deckbuilder)
         {
-
+            Intent deckBuilder = new Intent(this, DeckBuilderActivity.class);
+            startActivity(deckBuilder);
         }
         else if (id == R.id.nav_tuner)
         {
 
-            Intent tuner = new Intent(this, TunerActivity.class);
-            startActivity(tuner);
-            this.finish();
         }
         else if (id == R.id.nav_community)
         {

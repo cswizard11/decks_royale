@@ -50,6 +50,8 @@ public class MainActivity extends AppCompatActivity
         queue = Volley.newRequestQueue(this);
 
         makeApiRequest();
+
+        setTitle("Home");
     }
 
     @Override
@@ -93,11 +95,13 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_home) {
             // Handle the camera action
         } else if (id == R.id.nav_deckbuilder) {
-            Intent deckBuilder = new Intent(this, DeckBuilderActivity.class);
-            startActivity(deckBuilder);
+            //Intent deckBuilder = new Intent(this, DeckBuilderActivity.class);
+            //startActivity(deckBuilder);
 
-        } else if (id == R.id.nav_tuner) {
-
+        } else if (id == R.id.nav_tuner)
+        {
+            Intent tuner = new Intent(this, TunerActivity.class);
+            startActivity(tuner);
         } else if (id == R.id.nav_community) {
 
         } else if (id == R.id.nav_suggestions) {
