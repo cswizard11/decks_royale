@@ -25,13 +25,15 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONArray;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener
+{
 
     private TextView apiText;
     RequestQueue queue;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -55,9 +57,11 @@ public class MainActivity extends AppCompatActivity
     }
 
     @Override
-    public void onBackPressed() {
+    public void onBackPressed()
+    {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
+        if (drawer.isDrawerOpen(GravityCompat.START))
+        {
             drawer.closeDrawer(GravityCompat.START);
         } else {
             super.onBackPressed();
@@ -65,21 +69,24 @@ public class MainActivity extends AppCompatActivity
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_share) {
+        if (id == R.id.action_share)
+        {
             return true;
         }
 
@@ -88,25 +95,36 @@ public class MainActivity extends AppCompatActivity
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
+    public boolean onNavigationItemSelected(MenuItem item)
+    {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_home) {
+        if (id == R.id.nav_home)
+        {
             // Handle the camera action
-        } else if (id == R.id.nav_deckbuilder) {
+        }
+        else if (id == R.id.nav_deckbuilder)
+        {
             //Intent deckBuilder = new Intent(this, DeckBuilderActivity.class);
             //startActivity(deckBuilder);
 
-        } else if (id == R.id.nav_tuner)
+        }
+        else if (id == R.id.nav_tuner)
         {
             Intent tuner = new Intent(this, TunerActivity.class);
             startActivity(tuner);
-        } else if (id == R.id.nav_community) {
+        }
+        else if (id == R.id.nav_community)
+        {
 
-        } else if (id == R.id.nav_suggestions) {
+        }
+        else if (id == R.id.nav_suggestions)
+        {
 
-        } else if (id == R.id.nav_about) {
+        }
+        else if (id == R.id.nav_about)
+        {
 
         }
 
