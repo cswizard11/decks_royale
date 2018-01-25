@@ -27,9 +27,9 @@ import org.json.JSONArray;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener
 {
-
     private TextView apiText;
     RequestQueue queue;
+    private ActionBarDrawerToggle toggle = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -40,12 +40,12 @@ public class MainActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+        toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
-        toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setCheckedItem(R.id.nav_home);
         navigationView.setNavigationItemSelectedListener(this);
 
         apiText = (TextView)findViewById(R.id.response_text);
@@ -54,6 +54,13 @@ public class MainActivity extends AppCompatActivity
         makeApiRequest();
 
         setTitle("Home");
+    }
+
+    @Override
+    public void onPostCreate(Bundle savedInstanceState)
+    {
+        super.onPostCreate(savedInstanceState);
+        toggle.syncState();
     }
 
     @Override
@@ -106,9 +113,8 @@ public class MainActivity extends AppCompatActivity
         }
         else if (id == R.id.nav_deckbuilder)
         {
-            //Intent deckBuilder = new Intent(this, DeckBuilderActivity.class);
-            //startActivity(deckBuilder);
-
+            Intent deckBuilder = new Intent(this, DeckBuilderActivity.class);
+            startActivity(deckBuilder);
         }
         else if (id == R.id.nav_tuner)
         {
