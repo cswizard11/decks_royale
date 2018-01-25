@@ -27,8 +27,8 @@ import org.json.JSONArray;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener
 {
-    private TextView apiText;
-    RequestQueue queue;
+    //private TextView apiText;
+    //RequestQueue queue;
     private ActionBarDrawerToggle toggle = null;
 
     @Override
@@ -48,12 +48,20 @@ public class MainActivity extends AppCompatActivity
         navigationView.setCheckedItem(R.id.nav_home);
         navigationView.setNavigationItemSelectedListener(this);
 
-        apiText = (TextView)findViewById(R.id.response_text);
-        queue = Volley.newRequestQueue(this);
+        //apiText = (TextView)findViewById(R.id.response_text);
+        //queue = Volley.newRequestQueue(this);
 
-        makeApiRequest();
+        //makeApiRequest();
 
         setTitle("Home");
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();  // Always call the superclass method first
+
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setCheckedItem(R.id.nav_home);
     }
 
     @Override
@@ -139,7 +147,7 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    public void makeApiRequest()
+    /*public void makeApiRequest()
     {
         String url ="http://www.clashapi.xyz/api/cards";
 
@@ -161,4 +169,5 @@ public class MainActivity extends AppCompatActivity
 
         queue.add(req);
     }
+    */
 }
