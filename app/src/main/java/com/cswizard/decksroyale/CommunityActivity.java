@@ -11,7 +11,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class DeckBuilderActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener
+public class CommunityActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener
 {
     private ActionBarDrawerToggle toggle = null;
 
@@ -19,7 +19,7 @@ public class DeckBuilderActivity extends AppCompatActivity implements Navigation
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_deck_builder);
+        setContentView(R.layout.activity_community);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -29,7 +29,7 @@ public class DeckBuilderActivity extends AppCompatActivity implements Navigation
         drawer.setDrawerListener(toggle);
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setCheckedItem(R.id.nav_deckbuilder);
+        navigationView.setCheckedItem(R.id.nav_community);
         navigationView.setNavigationItemSelectedListener(this);
     }
 
@@ -52,20 +52,19 @@ public class DeckBuilderActivity extends AppCompatActivity implements Navigation
         }
         else if (id == R.id.nav_deckbuilder)
         {
-
+            Intent deckBuilder = new Intent(this, DeckBuilderActivity.class);
+            startActivity(deckBuilder);
+            this.finish();
         }
         else if (id == R.id.nav_tuner)
         {
-
             Intent tuner = new Intent(this, TunerActivity.class);
             startActivity(tuner);
             this.finish();
         }
         else if (id == R.id.nav_community)
         {
-            Intent community = new Intent(this, CommunityActivity.class);
-            startActivity(community);
-            this.finish();
+
         }
         else if (id == R.id.nav_suggestions)
         {

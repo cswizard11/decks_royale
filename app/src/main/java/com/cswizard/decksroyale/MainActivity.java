@@ -131,7 +131,8 @@ public class MainActivity extends AppCompatActivity
         }
         else if (id == R.id.nav_community)
         {
-
+            Intent community = new Intent(this, CommunityActivity.class);
+            startActivity(community);
         }
         else if (id == R.id.nav_suggestions)
         {
