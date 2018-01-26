@@ -11,7 +11,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class CommunityActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener
+public class SuggestionsActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener
 {
     private ActionBarDrawerToggle toggle = null;
 
@@ -19,7 +19,7 @@ public class CommunityActivity extends AppCompatActivity implements NavigationVi
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_community);
+        setContentView(R.layout.activity_suggestions);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -29,7 +29,7 @@ public class CommunityActivity extends AppCompatActivity implements NavigationVi
         drawer.setDrawerListener(toggle);
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setCheckedItem(R.id.nav_community);
+        navigationView.setCheckedItem(R.id.nav_suggestions);
         navigationView.setNavigationItemSelectedListener(this);
     }
 
@@ -64,13 +64,13 @@ public class CommunityActivity extends AppCompatActivity implements NavigationVi
         }
         else if (id == R.id.nav_community)
         {
-
+            Intent community = new Intent(this, CommunityActivity.class);
+            startActivity(community);
+            this.finish();
         }
         else if (id == R.id.nav_suggestions)
         {
-            Intent suggestions = new Intent(this, SuggestionsActivity.class);
-            startActivity(suggestions);
-            this.finish();
+
         }
         else if (id == R.id.nav_about)
         {

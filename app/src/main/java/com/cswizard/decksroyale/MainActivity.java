@@ -136,7 +136,8 @@ public class MainActivity extends AppCompatActivity
         }
         else if (id == R.id.nav_suggestions)
         {
-
+            Intent suggestions = new Intent(this, SuggestionsActivity.class);
+            startActivity(suggestions);
         }
         else if (id == R.id.nav_about)
         {

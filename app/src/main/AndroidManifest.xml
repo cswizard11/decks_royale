@@ -33,6 +33,10 @@
             android:label="Community"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
+        <activity android:name=".SuggestionsActivity"
+            android:label="Suggestions"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
     </application>
 
 </manifest>

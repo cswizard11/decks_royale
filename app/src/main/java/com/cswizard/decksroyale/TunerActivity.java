@@ -68,7 +68,9 @@ public class TunerActivity extends AppCompatActivity implements NavigationView.O
         }
         else if (id == R.id.nav_suggestions)
         {
-
+            Intent suggestions = new Intent(this, SuggestionsActivity.class);
+            startActivity(suggestions);
+            this.finish();
         }
         else if (id == R.id.nav_about)
         {

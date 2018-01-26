@@ -69,7 +69,9 @@ public class DeckBuilderActivity extends AppCompatActivity implements Navigation
         }
         else if (id == R.id.nav_suggestions)
         {
-
+            Intent suggestions = new Intent(this, SuggestionsActivity.class);
+            startActivity(suggestions);
+            this.finish();
         }
         else if (id == R.id.nav_about)
         {
